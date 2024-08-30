@@ -18,21 +18,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
-:root{
-    --body-color: rgb(250, 250, 250);
-    --color-white: rgb(255, 255, 255);
+/* Light Mode Variables (Default) */
+/* Light Mode Variables (Default) */
+/* Light Mode Variables (Aesthetic) */
+:root {
+    --body-color: #cbe4a3; /* Soft, light grey background */
+    --color-white: rgb(255, 255, 255); /* White for card backgrounds, etc. */
+    --text-color-second: rgb(55, 55, 55); /* Dark grey for primary text */
+    --text-color-third: rgb(112, 112, 112); /* Medium grey for secondary text */
 
-    --text-color-second: rgb(68, 68, 68);
-    --text-color-third: rgb(30, 159, 171);
+    --first-color: rgb(102, 153, 255); /* Soft blue for buttons, links */
+    --first-color-hover: rgb(81, 130, 230); /* Slightly darker blue for hover effects */
 
-    --first-color: rgb(110, 87, 224);
-    --first-color-hover: rgb(40, 91, 212);
-
-    --second-color: rgb(0, 201, 255);
-    --third-color: rgb(192, 166, 49);
-    --first-shadow-color: rgba(0, 0, 0, 0.1);
-
+    --second-color: rgb(255, 182, 77); /* Soft orange for accents */
+    --third-color: rgb(144, 190, 109); /* Muted green for secondary accents */
+    --first-shadow-color: rgba(0, 0, 0, 0.05); /* Light shadow for subtle depth */
 }
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --body-color: linear-gradient(135deg, #1b2735 0%, #090a0f 100%); /* Dark mode gradient */
+    --color-white: rgb(30, 30, 30); /* Dark background elements */
+    --text-color-second: rgb(200, 200, 200); /* Light grey for text */
+    --text-color-third: rgb(0, 201, 255); /* Accent color for text */
+    --first-color: rgb(88, 67, 196); /* Dark mode blue */
+    --first-color-hover: rgb(68, 119, 255); /* Dark mode hover */
+    --second-color: rgb(0, 173, 220); /* Dark mode accent */
+    --third-color: rgb(212, 180, 56); /* Dark mode secondary accent */
+    --first-shadow-color: rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+/* Applying Variables */
+body {
+    background: var(--body-color); /* Light or dark background */
+    color: var(--text-color-second); /* Light or dark text color */
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif; /* Modern, popular font */
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Button Styling */
+#dark-mode-toggle {
+    padding: 10px 20px;
+    background-color: var(--first-color); /* Light mode button */
+    color: var(--color-white); /* White text on button */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--first-color-hover); /* Hover effect for button */
+}
+
 
 /* ----- BASE ----- */
 *{
@@ -511,39 +553,67 @@ textarea{
 }
 
 /* ----- FOOTER BOX ----- */
-footer{
+/* Light Mode Footer */
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #F8F8F8;
+    background: var(--body-color); /* Light mode background */
     padding-block: 40px 60px;
 }
-.top-footer p{
+
+.top-footer p {
     font-size: 25px;
     font-weight: 600;
+    color: var(--text-color-second); /* Light mode text color */
 }
-.middle-footer .footer-menu{
+
+.middle-footer .footer-menu {
     display: flex;
 }
-.footer_menu_list{
+
+.footer_menu_list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.footer_menu_list a{
+
+.footer_menu_list a {
     text-decoration: none;
-    color: var(--text-color-second);
+    color: var(--text-color-second); /* Light mode link color */
     font-weight: 500;
     margin-inline: 20px;
 }
-.footer-social-icons{
+
+.footer-social-icons {
     display: flex;
-    gap: 30px;   
+    gap: 30px;
 }
-.bottom-footer{
+
+.bottom-footer {
     font-size: 14px;
     margin-top: 10px;
+    color: var(--text-color-third); /* Light mode footer text color */
 }
+
+/* Dark Mode Footer */
+body.dark-mode .footer_menu_list a:hover {
+    color: var(--first-color-hover); /* Hover effect */
+}
+
+body.dark-mode .footer-social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+body.dark-mode .bottom-footer {
+    font-size: 14px;
+    margin-top: 10px;
+    color: var(--text-color-third); /* Subtle color for footer text */
+}
+
 
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
@@ -796,6 +866,7 @@ footer{
             </div>
             <div class="nav-button">
                 <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+
             </div>
             <div class="nav-menu-btn">
                 <i class="uil uil-bars" onclick="myMenuFunction()"></i>
@@ -804,6 +875,7 @@ footer{
 
 
         <!-- -------------- MAIN ---------------- -->
+
         <main class="wrapper">
             <!-- -------------- FEATURED BOX ---------------- -->
             <section class="featured-box" id="home">
@@ -818,12 +890,17 @@ footer{
                         <p>Experienced frontend developer with a passion for creating visually stunning
                             and user-friendly websites.
                         </p>
+                        
                     </div>
                     <div class="featured-text-btn">
                         <button class="btn blue-btn">Collab with Me</button>
+                        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+
+                        
                         <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
                     </div>
                     <div class="social_icons">
+                        
                         <div class="icon"><i class="uil uil-instagram"></i></div>
                         <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
                         <div class="icon"><i class="uil uil-dribbble"></i></div>
@@ -832,7 +909,7 @@ footer{
                 </div>
                 <div class="featured-image">
                     <div class="image">
-                        <img src="avatar.jpg" alt="avatar">
+                        <img src="./assets/images/avatar.jpg" alt="avatar">
                     </div>
                 </div>
                 <div class="scroll-icon-box">
@@ -851,7 +928,8 @@ footer{
                 <div class="row">
                     <div class="col">
                         <div class="about-info">
-                            <h3>My introduction</h3>
+                            <h3>My introduction        
+                            </h3>
                             <p>I am Jay, a B.Tech student in Computer Science and Engineering at J D College of
                                 Engineering, Nagpur. Passionate about coding, web development, AI, and ML, I continually
                                 explore new technologies to enhance my skills. I enjoy collaborating on projects and am
@@ -1009,6 +1087,25 @@ footer{
     <!-- ----- MAIN JS ----- -->
     <!-- <script src="assets/js/main.js"></script> -->
      <script>
+
+document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+
+    // Optionally save the preference to localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
+// Check for saved user preference and apply it
+window.onload = function() {
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+};
+
 
         /* ----- NAVIGATION BAR FUNCTION ----- */
 function myMenuFunction(){

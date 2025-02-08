@@ -46,7 +46,8 @@
 
         /* Dark Mode Variables */
         body.dark-mode {
-            --body-color: linear-gradient(135deg, #1b2735 0%, #090a0f 100%);
+            --body-color: linear-gradient(135deg, #1b2735 0%, #121a43 100%);
+            
             /* Dark mode gradient */
             --color-white: rgb(30, 30, 30);
             /* Dark background elements */
@@ -65,16 +66,25 @@
             --first-shadow-color: rgba(255, 255, 255, 0.1);
             /* Light shadow */
         }
+
         [data-theme="dark"] {
-    --form-border-dark: #1c1c1c; /* Dark border color */
-    --form-bg-dark: #222; /* Dark background for form */
-    --input-bg-dark: #333; /* Darker background for inputs */
-    --input-border-dark: #2c1919; /* Darker border for inputs */
-    --input-focus-border-dark: #0b0808; /* Focus border color for inputs */
-    --button-bg-dark: #444; /* Dark button background color */
-    --button-hover-bg-dark: #555; /* Dark button hover color */
-    --text-color-dark: #020202; /* Light text color for dark mode */
-}
+            --form-border-dark: #1c1c1c;
+            /* Dark border color */
+            --form-bg-dark: #222;
+            /* Dark background for form */
+            --input-bg-dark: #333;
+            /* Darker background for inputs */
+            --input-border-dark: #2c1919;
+            /* Darker border for inputs */
+            --input-focus-border-dark: #0b0808;
+            /* Focus border color for inputs */
+            --button-bg-dark: #444;
+            /* Dark button background color */
+            --button-hover-bg-dark: #555;
+            /* Dark button hover color */
+            --text-color-dark: #020202;
+            /* Light text color for dark mode */
+        }
 
 
 
@@ -84,133 +94,148 @@
 
 
 
-/* Form Container */
-.form-control {
-    padding: 20px;
-    border: 3px solid var(--form-border-light); /* Default to light mode border */
-    border-radius: 15px;
-    background-color: var(--form-bg-light); /* Default to light mode background */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
+        /* Form Container */
+        .form-control {
+            padding: 20px;
+            border: 3px solid var(--form-border-light);
+            /* Default to light mode border */
+            border-radius: 15px;
+            background-color: var(--form-bg-light);
+            /* Default to light mode background */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
 
-.form-control:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
+        .form-control:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-/* Form Inputs */
-.input-field,
-.text-area textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 2px solid var(--input-border-light); /* Default to light mode border */
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: var(--input-bg-light); /* Default to light mode background */
-    color: var(--text-color-light);
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Form Inputs */
+        .input-field,
+        .text-area textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid var(--input-border-light);
+            /* Default to light mode border */
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: var(--input-bg-light);
+            /* Default to light mode background */
+            color: var(--text-color-light);
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.input-field:focus,
-.text-area textarea:focus {
-    border-color: var(--input-focus-border-light); /* Default to light mode focus border */
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
-}
+        .input-field:focus,
+        .text-area textarea:focus {
+            border-color: var(--input-focus-border-light);
+            /* Default to light mode focus border */
+            box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+        }
 
-/* Button */
-.btn {
-    background-color: var(--button-bg-light); /* Default to light mode button background */
-    color: #ffffff;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        /* Button */
+        .btn {
+            background-color: var(--button-bg-light);
+            /* Default to light mode button background */
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.btn:hover {
-    background-color: var(--button-hover-bg-light); /* Default to light mode hover button background */
-    transform: scale(1.05);
-}
+        .btn:hover {
+            background-color: var(--button-hover-bg-light);
+            /* Default to light mode hover button background */
+            transform: scale(1.05);
+        }
 
-/* Dark Mode Styles */
-[data-theme="dark"] .form-control {
-    border: 3px solid var(--form-border-dark);
-    background-color: var(--form-bg-dark);
-}
+        /* Dark Mode Styles */
+        [data-theme="dark"] .form-control {
+            border: 3px solid var(--form-border-dark);
+            background-color: var(--form-bg-dark);
+        }
 
-[data-theme="dark"] .input-field,
-[data-theme="dark"] .text-area textarea {
-    border: 2px solid var(--input-border-dark);
-    background-color: var(--input-bg-dark);
-    color: var(--text-color-dark);
-}
+        [data-theme="dark"] .input-field,
+        [data-theme="dark"] .text-area textarea {
+            border: 2px solid var(--input-border-dark);
+            background-color: var(--input-bg-dark);
+            color: var(--text-color-dark);
+        }
 
-[data-theme="dark"] .input-field:focus,
-[data-theme="dark"] .text-area textarea:focus {
-    border-color: var(--input-focus-border-dark);
-}
+        [data-theme="dark"] .input-field:focus,
+        [data-theme="dark"] .text-area textarea:focus {
+            border-color: var(--input-focus-border-dark);
+        }
 
-[data-theme="dark"] .btn {
-    background-color: var(--button-bg-dark);
-}
+        [data-theme="dark"] .btn {
+            background-color: var(--button-bg-dark);
+        }
 
-[data-theme="dark"] .btn:hover {
-    background-color: var(--button-hover-bg-dark);
-}
+        [data-theme="dark"] .btn:hover {
+            background-color: var(--button-hover-bg-dark);
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .form-control {
-        padding: 15px;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-control {
+                padding: 15px;
+            }
 
-    .input-field,
-    .text-area textarea {
-        padding: 10px;
-    }
+            .input-field,
+            .text-area textarea {
+                padding: 10px;
+            }
 
-    .btn {
-        padding: 12px 25px;
-        font-size: 16px;
-    }
-}
+            .btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
 
         /* Applying Variables */
-        body {
-            background: var(--body-color);
-            /* Light or dark background */
-            color: var(--text-color-second);
-            /* Light or dark text color */
-            margin: 0;
-            font-family: 'Helvetica Neue', sans-serif;
-            /* Modern, popular font */
-            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-            /* Smooth transition */
-        }
+body {
+    background-color: var(--body-color); /* Corrected 'background' to 'background-color' */
+    color: var(--text-color-second);
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    /* Smooth transition */
+    /* cursor: none; */
+}
 
-        /* Button Styling */
-        #dark-mode-toggle {
-            padding: 10px 20px;
-            background-color: var(--second-color);
-            /* Light mode button */
-            color: var(--text-color-dark);
-            /* White text on button */
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            position: fixed;
-            top: 4.2px;
-            right: 30px;
-            left: 300px;
-            z-index: 100;
-            transition: background-color 0.3s ease-in-out;
-        }
+
+   /* Cover overlay styling (optional example) */
+#cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 10; /* Higher than the button's z-index */
+}
+
+#dark-mode-toggle {
+    padding: 10px 20px;
+    background-color: var(--second-color);
+    color: var(--text-color-dark);
+    cursor: pointer;
+    border-radius: 9px;
+    /* position: relative; */
+    top: 4.2px;
+    right: 30px;
+    left: 300px;
+    z-index: 5; /* Lower than the overlay */
+    transition: background-color 0.3s ease-in-out;
+}
+
+        
 
         #dark-mode-toggle:hover {
             background-color: var(--first-color-hover);
@@ -300,6 +325,9 @@
             padding-inline: 9vw;
             transition: .3s;
             z-index: 100;
+            /* color: white; */
+            text-decoration: white;
+            
         }
 
         .nav-logo {
@@ -332,9 +360,10 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-color-second);
+            /* color: var(--text-color-second); */
+            color: black;
             font-weight: 500;
-            padding-inline: 15px;
+            padding-inline: 25px;
             margin-inline: 20px;
         }
 
@@ -350,7 +379,7 @@
         .active-link {
             position: relative;
             color: var(--first-color);
-            transition: .3;
+            transition: .2;
         }
 
         .active-link::after {
@@ -389,6 +418,7 @@
             flex-direction: column;
             width: 50%;
             padding-left: 20px;
+            
         }
 
         .featured-text-card span {
@@ -404,6 +434,7 @@
             font-weight: 600;
             color: var(--text-color-second);
             margin-block: 20px;
+            
         }
 
         .typedText {
@@ -425,11 +456,25 @@
         .featured-text-btn>.blue-btn {
             background: var(--first-color);
             color: var(--color-white);
+            
         }
 
         .featured-text-btn>.blue-btn:hover {
             background: var(--first-color-hover);
         }
+
+        .featured-text-btn > .blue-btn a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Matches the button's text color */
+}
+
+.featured-text-btn > .blue-btn {
+    padding: 10px 20px; /* Adjust button size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+
 
         .social_icons {
             display: flex;
@@ -566,24 +611,29 @@
         }
 
         /* Light Color Scheme for About Button */
-.about-btn button {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    background: var(--first-color-light); /* Light color for background */
-    color: var(--text-color-light); /* Light color for text */
-    border-radius: 30px;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+        .about-btn button {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: var(--first-color-light);
+            /* Light color for background */
+            color: var(--text-color-light);
+            /* Light color for text */
+            border-radius: 30px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-.about-btn button:hover {
-    background: var(--first-color-light-hover); /* Light color for hover background */
-    color: var(--text-color-dark); /* Darker text color for better contrast on hover */
-}
+        .about-btn button:hover {
+            background: var(--first-color-light-hover);
+            /* Light color for hover background */
+            color: var(--text-color-dark);
+            /* Darker text color for better contrast on hover */
+        }
+
         /* ----- ABOUT / SKILLS BOX ----- */
         .skills-box {
             margin: 10px;
@@ -649,7 +699,7 @@
             background: var(--second-color);
             width: 100%;
             height: 100%;
-            transition: .4s;
+            transition: .2s;
             z-index: 1;
         }
 
@@ -727,7 +777,7 @@
             width: 50%;
             height: 55px;
             background: transparent;
-            border: 2px solid #AAA;
+            border: 2px solid #f90000;
             border-radius: 10px;
             padding-inline: 20px;
             outline: none;
@@ -762,7 +812,7 @@
         }
 
 
-        
+
 
         /* ----- FOOTER BOX ----- */
         /* Light Mode Footer */
@@ -834,6 +884,10 @@
 
 
 
+
+
+
+
         /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
         @media only screen and (max-width: 1024px) {
             .featured-text {
@@ -864,123 +918,12 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(20px);
+                /* background: rgba(39, 36, 36, 0.7); */
+                backdrop-filter: blur(25px);
                 width: 100%;
                 min-height: 450px;
-                height: 90vh;
-                transition: .3s;
-            }
-
-            .nav_menu_list {
-                flex-direction: column;
-            }
-
-            .nav-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .featured-box {
-                flex-direction: column;
-                justify-content: center;
                 height: 100vh;
-            }
-
-            .featured-text {
-                width: 100%;
-                order: 2;
-                justify-content: center;
-                align-content: flex-start;
-                min-height: 60vh;
-            }
-
-            .social_icons {
-                margin-top: 2em;
-            }
-
-            .featured-image {
-                order: 1;
-                justify-content: center;
-                min-height: 150px;
-                width: 100%;
-                margin-top: 65px;
-            }
-
-            .image,
-            .image img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .row {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 50px;
-            }
-
-            .col {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .about-info,
-            .contact-info {
-                width: 100%;
-            }
-
-            .project-container {
-                justify-content: center;
-            }
-
-            .project-box {
-                width: 80%;
-            }
-
-        }
-
-
-
-
-        /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
-        @media only screen and (max-width: 1024px) {
-            .featured-text {
-                padding: 0;
-            }
-
-            .image,
-            .image img {
-                width: 320px;
-                height: 320px;
-            }
-        }
-
-        /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-        @media only screen and (max-width: 900px) {
-            .nav-button {
-                display: none;
-            }
-
-            .nav-menu.responsive {
-                left: 0;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(20px);
-                width: 100%;
-                min-height: 450px;
-                height: 90vh;
-                transition: .3s;
+                transition: 0.2s;
             }
 
             .nav_menu_list {
@@ -1167,70 +1110,82 @@
             font-size: 18px;
         }
 
-       /* Default (Light Mode) Styles */
-.testimonial-slider {
-    background-color: var(--testimonial-bg, #f4f4f4);
-    color: var(--testimonial-text, #333);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+        /* Default (Light Mode) Styles */
+        .testimonial-slider {
+            background-color: var(--testimonial-bg, #f4f4f4);
+            color: var(--testimonial-text, #333);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.2s ease;
+        }
+
+        .testimonial {
+            flex: 0 0 100%;
+            font-size: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: color 0.2s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode .testimonial-slider {
+            background-color: var(--testimonial-bg-dark, #1a1a1a);
+            color: var(--testimonial-text-dark, #e0e0e0);
+        }
+
+        body.dark-mode .testimonial {
+            color: var(--testimonial-text-dark, #e0e0e0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonial {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial {
+                font-size: 12px;
+                padding: 15px;
+            }
+        }
+
+        .testimonial {
+            color: rgb(144, 155, 159);
+        }
+
+        .name {
+            color: #FF6347;
+            /* Example: tomato color */
+
+
+
+
+            /* Laser dot styling */
+.laser-cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 9999;
 }
-
-.testimonial-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.testimonial {
-    flex: 0 0 100%;
-    font-size: 16px;
-    padding: 20px;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-/* Dark Mode Styles */
-body.dark-mode .testimonial-slider {
-    background-color: var(--testimonial-bg-dark, #1a1a1a);
-    color: var(--testimonial-text-dark, #e0e0e0);
-}
-
-body.dark-mode .testimonial {
-    color: var(--testimonial-text-dark, #e0e0e0);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .testimonial {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonial {
-        font-size: 12px;
-        padding: 15px;
-    }
-}
-.testimonial {
-    color: rgb(144, 155, 159);
-}
-
-.name {
-    color: #FF6347; /* Example: tomato color */
-}
-
-
-
-
-
-
+        }
     </style>
 </head>
+
 
 <body>
     <div class="container">
@@ -1261,7 +1216,6 @@ body.dark-mode .testimonial {
                 </ul>
             </div>
             <div class="nav-button">
-                <!-- <button class="btn">Download CV <i class="uil uil-file-alt"></i></button> -->
 
             </div>
             <div class="nav-menu-btn">
@@ -1272,6 +1226,7 @@ body.dark-mode .testimonial {
 
         <!-- -------------- MAIN ---------------- -->
 
+        <div class="laser-cursor"></div>
         <main class="wrapper">
             <!-- -------------- FEATURED BOX ---------------- -->
             <section class="featured-box" id="home">
@@ -1289,11 +1244,10 @@ body.dark-mode .testimonial {
 
                     </div>
                     <div class="featured-text-btn">
-                        <button class="btn blue-btn">Collab with Me</button>
+                        
+                        <button class="btn blue-btn"> <a href="#projects" >Collab with Me</a></button>
                         <button id="dark-mode-toggle"> Dark Mode</button>
 
-
-                        <!-- <button  id="dark-mode-toggle" class="btn"> Dark Mode <i class="uil uil-file-alt"></i></button> -->
                     </div>
                     <div class="social_icons">
                         <a href="https://www.instagram.com/jayrams_.23/" class="icon" target="_blank"
@@ -1307,15 +1261,16 @@ body.dark-mode .testimonial {
                             rel="noopener noreferrer">
                             <i class="uil uil-linkedin-alt"></i>
                         </a>
-                        <a href="https://dribbble.com/" class="icon" target="_blank" rel="noopener noreferrer">
+                        <a href="./Gallery.html" class="icon" target="_blank">
                             <i class="uil uil-dribbble"></i>
                         </a>
+                        
                     </div>
 
                 </div>
                 <div class="featured-image">
                     <div class="image">
-                        <img src="./avatar.jpg" alt="avatar">
+                        <img src="./assets/images/avatar.jpg" alt="avatar">
                     </div>
                 </div>
                 <div class="scroll-icon-box">
@@ -1341,49 +1296,50 @@ body.dark-mode .testimonial {
                                 explore new technologies to enhance my skills. I enjoy collaborating on projects and am
                                 dedicated to improving my logical thinking and networking abilities.
                             </p>
-                            <div class="about-btn"><a href="./MyResume.pdf" target="_blank" > <button class="btn"> Resume <i class="uil uil-import"></i></a>
+                            <div class="about-btn"><a href="./MyResume.pdf" target="_blank"> <button class="btn"> Resume
+                                        <i class="uil uil-import"></i></a>
 
-                                <!-- <button class="btn"> Resume <i class="uil uil-import"></i></button> -->
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="skills-box">
                             <div class="skills-header">
-                                <h3>Frontend</h3>
+                                <h3>Languages</h3>
                             </div>
+                            <div class="skills-list">
+                                
+                                <span>Python</span>
+                                <span>C++</span>
+                                <span>JavaScript</span>
+                                <!-- <span></span> -->
+                            </div>
+                        </div>
+                        <div class="skills-box">
+                            <div class="skills-header">
+                                <h3>Full-Stack</h3>
+                            </div>
+                            
                             <div class="skills-list">
                                 <span>HTML</span>
                                 <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Node.js</span>
                                 <span>Next.js</span>
                                 <span>React</span>
-                                <span></span>
+                                <span>Node.js</span>
+
+
                             </div>
                         </div>
                         <div class="skills-box">
                             <div class="skills-header">
-                                <h3>Backend</h3>
+                                <h3>Others</h3>
                             </div>
                             <div class="skills-list">
-                                <span>Python</span>
-                                <span>C++</span>
-                                <span></span>
-                                <span></span>
-                               
-                            </div>
-                        </div>
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>AI / ML</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>Coming Soon </span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                <span>AI </span>
+                                <span>ML</span>
+                                <span>Framer</span>
+                                <span>Git</span>
+                                <!-- <span></span> -->
                             </div>
                         </div>
                     </div>
@@ -1394,10 +1350,10 @@ body.dark-mode .testimonial {
 
             <section class="section" id="projects">
                 <div class="top-header">
-                    <a href="./myProjects.html"  target="_blank"  style="text-decoration: none; color: inherit;">
+                    <a href="./index3.html" target="_blank" style="text-decoration: none; color: inherit;">
                         <h1>Projects</h1>
                     </a>
-                    
+
                 </div>
                 <div class="project-container">
                     <div class="project-box">
@@ -1406,8 +1362,8 @@ body.dark-mode .testimonial {
                         <label>5+ Finished Projects</label>
                     </div>
                     <div class="project-box">
-                        <i class="uil uil-users-alt"></i>
-                        <h3>collab</h3>
+                        <i class="uil uil-users-alt" ></i>
+                            <h3>collab</h3>
                         <label>0+ happy collabration</label>
                     </div>
                     <div class="project-box">
@@ -1437,7 +1393,10 @@ body.dark-mode .testimonial {
                     <!-- Contact Form Section -->
                     <div class="col">
                         <div class="form-control">
-                            <form action="https://formspree.io/f/{form_id}" method="post">
+                            <form id="contactForm" action="https://api.web3forms.com/submit" method="post">
+                                <input type="hidden" name="access_key" value="e70f9961-e855-4bec-beb8-f4830a26ba56">
+                                <input type="hidden" name="subject"
+                                    value="New Contact Form Submission from Web3Forms" />
                                 <div class="form-inputs">
                                     <input type="text" name="name" class="input-field" placeholder="Name" required>
                                     <input type="email" name="email" class="input-field" placeholder="Email" required>
@@ -1468,16 +1427,16 @@ body.dark-mode .testimonial {
             <div class="middle-footer">
                 <ul class="footer-menu">
                     <li class="footer_menu_list">
-                        <a href="#home">Home</a>
+                        <a href="#home">Blog</a>
                     </li>
                     <li class="footer_menu_list">
-                        <a href="#about">About</a>
+                        <a href="#about">Articals</a>
                     </li>
                     <li class="footer_menu_list">
-                        <a href="#projects">Projects</a>
+                        <a href="#projects">Gallery</a>
                     </li>
                     <li class="footer_menu_list">
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Projects</a>
                     </li>
                 </ul>
             </div>
@@ -1500,17 +1459,10 @@ body.dark-mode .testimonial {
             <!-- <div class="bottom-footer">
                 <p>Copyright &copy; <a href="#home" style="text-decoration: none;">by--John Doe</a> - All rights
                     reserved</p> -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial">© Copyright by <span class="name">John Doe</span> - All rights reserved</div>
-                    </div>
-                    
-
-
-
-
-
-            
-
+            <div class="testimonial-slide">
+                <div class="testimonial">© Copyright by <span class="name">Jayram Sangwat</span> - All rights reserved
+                </div>
+            </div>
 
 
 
@@ -1532,16 +1484,24 @@ body.dark-mode .testimonial {
     <!-- <script src="assets/js/main.js"></script> -->
     <script>
 
-        document.getElementById('dark-mode-toggle').addEventListener('click', function () {
-            document.body.classList.toggle('dark-mode');
+     
 
-            // Optionally save the preference to localStorage
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-            } else {
-                localStorage.setItem('dark-mode', 'disabled');
-            }
-        });
+        document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+    const body = document.body;
+    const toggleButton = this;
+
+    // Toggle dark mode
+    body.classList.toggle('dark-mode');
+
+    // Update button text
+    if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = 'Light Mode'; // Opposite of dark mode
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        toggleButton.textContent = 'Dark Mode'; // Opposite of light mode
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
 
         // Check for saved user preference and apply it
         window.onload = function () {
@@ -1590,7 +1550,7 @@ body.dark-mode .testimonial {
             loop: true,
             typeSpeed: 100,
             backSpeed: 80,
-            backDelay: 2000
+            backDelay: 1000
         })
 
 
@@ -1598,7 +1558,7 @@ body.dark-mode .testimonial {
         const sr = ScrollReveal({
             origin: 'top',
             distance: '80px',
-            duration: 2000,
+            duration: 1000,
             reset: true
         })
 
@@ -1623,7 +1583,7 @@ body.dark-mode .testimonial {
         const srLeft = ScrollReveal({
             origin: 'left',
             distance: '80px',
-            duration: 2000,
+            duration: 1500,
             reset: true
         })
 
@@ -1634,7 +1594,7 @@ body.dark-mode .testimonial {
         const srRight = ScrollReveal({
             origin: 'right',
             distance: '80px',
-            duration: 2000,
+            duration: 1500,
             reset: true
         })
 
@@ -1646,7 +1606,6 @@ body.dark-mode .testimonial {
         /* ----- CHANGE ACTIVE LINK ----- */
 
         const sections = document.querySelectorAll('section[id]')
-
         function scrollActive() {
             const scrollY = window.scrollY;
 
@@ -1671,40 +1630,26 @@ body.dark-mode .testimonial {
 
 
 
-            // hjwhxh
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevent default form submission
 
+            // Get form data
+            const formData = new FormData(this);
 
-
-            < script >
-            document.getElementById('contactForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent default form submission
-
-                const form = event.target;
-                const formData = new FormData(form);
-
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('Message sent successfully!');
-                            form.reset();
-                        } else {
-                            alert('Failed to send message.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('An error occurred.');
-                    });
+            // Submit form using fetch
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData
             });
 
-
-
-
-
-
+            if (response.ok) {
+                // Clear form fields on successful submission
+                this.reset();
+                alert('Your message has been sent successfully!');
+            } else {
+                alert('There was an error sending your message. Please try again.');
+            }
+        });
 
 
     </script>
@@ -1712,10 +1657,6 @@ body.dark-mode .testimonial {
 
 
     </script>
-
-
-
-
 
 
 </body>

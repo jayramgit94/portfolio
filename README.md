@@ -1,6 +1,6 @@
 # 🚀 Personal Portfolio - Jayram Sangawat
 
-🔗 **Live Demo**: [View Portfolio](https://your-username.github.io/portfolio/)  
+🔗 **Live Demo**: [View Portfolio](https://jayramgit94.github.io/portfolio/)  
 
 ## 📌 Features
 ✅ Fully Responsive Design  
